@@ -40,6 +40,7 @@ public:
     //bitwise combination
     void And(const BitVector* bitvector);
     void Or(const BitVector* bitvector);
+    void Xor(const BitVector* bitvector);
 
     //bit manipulation
     bool GetBit(size_t pos);
@@ -50,6 +51,10 @@ public:
     size_t num() const;
     size_t GetNumBlocks() const;
     BitVectorBlock* GetBVBlock(size_t id) const;
+    
+    uint32_t * getbits(int i) {
+        return reinterpret_cast<uint32_t *>(blocks_[i]->data());
+    }
 
 private:
     std::vector<BitVectorBlock*> blocks_;

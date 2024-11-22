@@ -1,5 +1,5 @@
 list(APPEND examples
-    example1
+    example1 example2
     )
 
 foreach(ee ${examples})

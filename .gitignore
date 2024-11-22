@@ -8,3 +8,4 @@
 !*.sh
 !*.awk
 !CMakeLists.txt
+build

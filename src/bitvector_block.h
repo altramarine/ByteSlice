@@ -40,6 +40,7 @@ public:
     void ClearTail();
     void And(const BitVectorBlock* block);
     void Or(const BitVectorBlock* block);
+    void Xor(const BitVectorBlock* block);
     void Set(const BitVectorBlock* block);
 
     //bit manipulation
@@ -56,7 +57,9 @@ public:
     AvxUnit GetAvxUnit(size_t start_word_pos) const;
     size_t num() const;
     size_t num_word_units() const;
-
+    WordUnit* data() {
+        return data_;
+    }
 
 private:
     WordUnit* data_ = NULL;

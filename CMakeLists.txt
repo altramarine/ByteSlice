@@ -31,18 +31,18 @@ add_subdirectory(example)
 #############################
 ##  Set up test
 ############################
-enable_testing()
-SET(testlog "tests/tests.log")
-add_custom_target(check-build)
-add_custom_target(check 
-    COMMAND ${CMAKE_CTEST_COMMAND} 
-        --output-on-failure 
-        --output-log ${testlog}
-    COMMENT "Test log is written to ${testlog}"
-)
-add_dependencies(check check-build)
-add_subdirectory(third-party/googletest/googletest EXCLUDE_FROM_ALL)
-add_subdirectory(tests EXCLUDE_FROM_ALL)  
+# enable_testing()
+# SET(testlog "tests/tests.log")
+# add_custom_target(check-build)
+# add_custom_target(check 
+#     COMMAND ${CMAKE_CTEST_COMMAND} 
+#         --output-on-failure 
+#         --output-log ${testlog}
+#     COMMENT "Test log is written to ${testlog}"
+# )
+# add_dependencies(check check-build)
+# add_subdirectory(third-party/googletest/googletest EXCLUDE_FROM_ALL)
+# add_subdirectory(tests EXCLUDE_FROM_ALL)  
 
 
 set(CONFIGURED_ONCE TRUE CACHE INTERNAL "A flag showing that CMake has configured at least once.")

@@ -80,6 +80,13 @@ void BitVectorBlock::Or(const BitVectorBlock* block){
     ClearTail();
 }
 
+void BitVectorBlock::Xor(const BitVectorBlock* block){
+    for(size_t i=0; i<num_word_units_; i++){
+        data_[i] ^= block->GetWordUnit(i);
+    }
+    ClearTail();
+}
+
 void BitVectorBlock::Set(const BitVectorBlock* block){
     for(size_t i=0; i<num_word_units_; i++){
         data_[i] = block->GetWordUnit(i);

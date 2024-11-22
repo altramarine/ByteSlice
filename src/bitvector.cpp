@@ -54,6 +54,16 @@ void BitVector::Or(const BitVector* bitvector){
     }
 }
 
+void BitVector::Xor(const BitVector* bitvector){
+    assert(num_ == bitvector->num_);
+
+#   pragma omp parallel for schedule(dynamic)
+    for(size_t i=0; i < blocks_.size(); i++){
+        blocks_[i]->Xor(bitvector->GetBVBlock(i));
+    }
+}
+
+
 
 void BitVector::SetOnes(){
 #   pragma omp parallel for schedule(dynamic)
