@@ -15,7 +15,6 @@
 #include "src/column.h"
 #include "src/types.h"
 
-#include "hybrid_timer.h"
 using namespace byteslice;
 
 class ByteSlice {
