@@ -15,7 +15,7 @@
 #include "src/column.h"
 #include "src/types.h"
 
-using namespace byteslice;
+namespace byteslice {
 
 class ByteSlice {
 public:
@@ -63,7 +63,7 @@ private:
   BitVector* bitvectorR;
 };
 
-
+}
 
 // int main() {
 //   // test:
